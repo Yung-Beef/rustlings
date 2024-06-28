@@ -3,7 +3,7 @@
 // Execute `rustlings hint strings3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
@@ -26,9 +26,10 @@ fn replace_me(input: &str) -> String {
     } else {
         for _c in s.chars() {
             if s[count..(count+4)] == *"cars" {
-                let before: String = s[0..count].to_owned();
-                let after: String = s[(count+4)..].to_owned();
-                f = (before + "balloons" + &after).to_owned();
+                let before = &s[0..count];
+                let after = &s[(count+4)..];
+                f = before.to_owned() + "balloons" + after;
+                break;
             };
             count += 1;
         };
